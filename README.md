@@ -7,8 +7,8 @@ By using the HideString header file, the string is hidden in the executable file
 Use the Java command line application (.jar file) included to create a new class 
 and header file with a matching reference file for your use with your applications.
 
-Execute the jar by executing the following command in the terminal or command prompt:<br>
-`java -jar kleverkeys-generator.jar`<br>
+Execute the jar by executing the following command in the terminal or command prompt (Windows, Linux, and macOS):<br><br>
+`java -jar kleverkeys-generator.jar`<br><br>
 Then follow the prompts (# of keys & ivs, class name, and path) to create the 3 files automatically.
 
 To effectively prevent someone from getting the keys by copying the library, edit the class file's <b>get</b> function default
