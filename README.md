@@ -14,7 +14,7 @@ Then follow the prompts (# of keys & ivs, class name, and path) to create the 3 
 To effectively prevent someone from getting the keys by copying the library, edit the class file's <b>get</b> function default
 return value to a secure random hex value. This will make any brute force attempts impossible.
 
-The id strings in the get function of the class can be seen in the binary code, however, they are 32 bytes in order for them to look like a 256 bit key or other string. Be smart! An idea for this would to be create a hash of the id and match the input (id) with the hash of the input. In the future, I may post a solution with my easy_encrypt C++ library.
+The id strings in the get function of the class can be seen in the binary code, however, they are 32 bytes in order for them to look like a 256 bit key or other string. Be smart! An idea for this would be to create a hash of the id and match the input (id) with the hash of the input. In the future, I may post a solution with my easy_encrypt C++ library.
 
 <b>Don't forget to edit the variables in the CMakeLists.txt file to build and install the library as well as installing the boost library and openssl library</b>.
 
