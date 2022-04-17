@@ -16,7 +16,7 @@ return type to a secure random hex value. This will make any brute force attempt
 
 The id strings in the get function of the class can be seen in the executable, however, they are 32 bytes in order for them to look like a 256 bit key or other string. Be smart!
 
-Don't forget to edit the variables in the CMakeLists.txt file to build and install the library as well as installing the <b>boost library and openssl library</b>.
+<b>Don't forget to edit the variables in the CMakeLists.txt file to build and install the library as well as installing the boost library and openssl library</b>.
 
 To build the library with cmake run the following within the directory of the source files and HideString header:
 <br>
