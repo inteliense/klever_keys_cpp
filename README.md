@@ -8,7 +8,7 @@ Use the Java command line application (.jar file) included to create a new class
 and header file with a matching reference file for your use with your applications.
 
 Execute the jar by executing the following command in the terminal or command prompt:<br>
-`java -jar kleverkeys-generator.jar`
+`java -jar kleverkeys-generator.jar`<br>
 Then follow the prompts (# of keys & ivs, class name, and path) to create the 3 files automatically.
 
 Edit the variables in the CMakeLists.txt file to build and install the library.
