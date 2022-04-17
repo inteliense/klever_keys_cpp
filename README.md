@@ -12,7 +12,7 @@ Execute the jar by executing the following command in the terminal or command pr
 Then follow the prompts (# of keys & ivs, class name, and path) to create the 3 files automatically.
 
 To effectively prevent someone from getting the keys by copying the library, edit the class file's <b>get</b> function default
-return type to a secure random hex value. This will make any brute force attempts impossible.
+return value to a secure random hex value. This will make any brute force attempts impossible.
 
 The id strings in the get function of the class can be seen in the executable, however, they are 32 bytes in order for them to look like a 256 bit key or other string. Be smart!
 
