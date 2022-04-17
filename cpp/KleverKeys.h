@@ -6,7 +6,7 @@
 #include <string>
 #include "HideString.h"
 
-class KleverKeys{
+class KleverKeys {
 
 public:
 	static std::string get(std::string id);
