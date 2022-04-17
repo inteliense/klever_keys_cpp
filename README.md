@@ -2,7 +2,7 @@
 
 The purpose for this library is to have secure system keys and initialization vectors for various encryption methods (ex: AES).
 
-By using the HideString header file, the string is hidden in the binary, thus keeping attackers from taking and using your keys.
+By using the HideString header file, the string is hidden in the executable file, thus keeping attackers from taking and using your keys.
 
 Use the Java command line application (.jar file) included to create a new class 
 and header file with a matching reference file for your use with your applications.
