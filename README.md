@@ -11,7 +11,10 @@ Execute the jar by executing the following command in the terminal or command pr
 `java -jar kleverkeys-generator.jar`<br>
 Then follow the prompts (# of keys & ivs, class name, and path) to create the 3 files automatically.
 
-Edit the variables in the CMakeLists.txt file to build and install the library.
+To effectively prevent someone from getting the keys by copying the library, edit the class file's <b>get</b> function default
+return type to a secure random hex value. This will make any brute force attempts impossible.
+
+Don't forget to edit the variables in the CMakeLists.txt file to build and install the library.
 
 To build the library with cmake run the following within the directory of the source files and HideString header:
 <br>
