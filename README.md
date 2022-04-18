@@ -4,7 +4,7 @@ The purpose for this library is to have secure system keys and initialization ve
 
 By using the HideString header file, the string is hidden in the binary code, thus keeping attackers from taking and using your keys.
 
-Use the Java command line application (.jar file) included to create a new class 
+Use the Java application (.jar file) included to create a new class 
 and header file with a matching reference file for your use with your applications.
 
 Execute the jar by executing the following command in the terminal or command prompt (Windows, Linux, and macOS):<br><br>
