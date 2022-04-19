@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 14)
 ##TODO fill in the paths below
 #custom variables
 set(CUSTOM_LIBRARY_PATH /opt/homebrew/opt) # /path/to/libraries/dir
-set(OPENSSL_PATH /opt/homebrew/opt/openssl@3) # /path/to/library/dir
+set(OPENSSL_PATH /usr/local/) # /path/to/library/dir
 set(BOOST_PATH /opt/homebrew/opt/boost@1.76) # /path/to/library/dir
 set(INSTALL_PARENT_DIR /usr/local) # /path/to/install/dir
 
@@ -29,7 +29,9 @@ find_library(Boost boost
         PATHS ${BOOST_PATH})
 
 #static library
-add_library(klever_keys HideString.h KleverKeys.h KleverKeys.cpp)
+add_library(klever_keys HideString.h KleverKeys.h KleverKeys.cpp
+        easy_encrypt/EasyEncrypt.h easy_encrypt/EasyEncrypt.h
+        easy_encrypt/Base64.h)
 
 #shared library
 #add_library(klever_keys SHARED HideString.h KleverKeys.h KleverKeys.cpp)
