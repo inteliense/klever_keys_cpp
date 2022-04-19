@@ -11,8 +11,8 @@ Execute the jar by executing the following command in the terminal or command pr
 `java -jar kleverkeys-generator.jar`<br><br>
 Then follow the prompts (# of keys & ivs, class name, and path) to create the 3 files automatically.
 
-To effectively prevent someone from getting the keys by copying the library, edit the class file's <b>get</b> function default
-return value to a secure random hex value. This will make any brute force attempts impossible.
+To effectively prevent someone from getting the keys by copying the library, the class file's <b>get</b> function default
+return value is a random hex value. This will make any brute force attempts impossible.
 
 The id strings in the get function of the class can be seen in the binary code, however, they are 32 bytes in order for them to look like a 256 bit key or other string and require a hash of the id when finding a matching key.
 
