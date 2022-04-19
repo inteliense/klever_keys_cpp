@@ -2,55 +2,60 @@
 // For extra security, complete the last return value with a secure random hex value. (32 bytes)
 
 #include "KleverKeys.h"
+#include "easy_encrypt/EasyEncrypt.h"
 
-//56D84F2A821945707E6E5FE4BDFCFC66281C98096212907DBEC10D9C7A3878A2
-DEFINE_HIDDEN_STRING(String1, 0x15, ('5')('6')('D')('8')('4')('F')('2')('A')('8')('2')('1')('9')('4')('5')('7')('0')('7')('E')('6')('E')('5')('F')('E')('4')('B')('D')('F')('C')('F')('C')('6')('6')('2')('8')('1')('C')('9')('8')('0')('9')('6')('2')('1')('2')('9')('0')('7')('D')('B')('E')('C')('1')('0')('D')('9')('C')('7')('A')('3')('8')('7')('8')('A')('2'))
-//1E3D1D3BE121598D781758A338BF9E2D696EC398BF25DB937A82B65E2804AB6B
-DEFINE_HIDDEN_STRING(String2, 0x5E, ('1')('E')('3')('D')('1')('D')('3')('B')('E')('1')('2')('1')('5')('9')('8')('D')('7')('8')('1')('7')('5')('8')('A')('3')('3')('8')('B')('F')('9')('E')('2')('D')('6')('9')('6')('E')('C')('3')('9')('8')('B')('F')('2')('5')('D')('B')('9')('3')('7')('A')('8')('2')('B')('6')('5')('E')('2')('8')('0')('4')('A')('B')('6')('B'))
-//2E9C54DB4BACE7838133564E69F20E3B7541A027D89E8CB8E7EB78405A3071E7
-DEFINE_HIDDEN_STRING(String3, 0x4C, ('2')('E')('9')('C')('5')('4')('D')('B')('4')('B')('A')('C')('E')('7')('8')('3')('8')('1')('3')('3')('5')('6')('4')('E')('6')('9')('F')('2')('0')('E')('3')('B')('7')('5')('4')('1')('A')('0')('2')('7')('D')('8')('9')('E')('8')('C')('B')('8')('E')('7')('E')('B')('7')('8')('4')('0')('5')('A')('3')('0')('7')('1')('E')('7'))
-//2B02D15430571A29EA084E98A4F172E9
-DEFINE_HIDDEN_STRING(String4, 0x0E, ('2')('B')('0')('2')('D')('1')('5')('4')('3')('0')('5')('7')('1')('A')('2')('9')('E')('A')('0')('8')('4')('E')('9')('8')('A')('4')('F')('1')('7')('2')('E')('9'))
-//A7056AD7F0049106FFDB55166BFBE6B4
-DEFINE_HIDDEN_STRING(String5, 0x0C, ('A')('7')('0')('5')('6')('A')('D')('7')('F')('0')('0')('4')('9')('1')('0')('6')('F')('F')('D')('B')('5')('5')('1')('6')('6')('B')('F')('B')('E')('6')('B')('4'))
-//C1863038A1B2866670D99BCABDB4EA47
-DEFINE_HIDDEN_STRING(String6, 0x4B, ('C')('1')('8')('6')('3')('0')('3')('8')('A')('1')('B')('2')('8')('6')('6')('6')('7')('0')('D')('9')('9')('B')('C')('A')('B')('D')('B')('4')('E')('A')('4')('7'))
-//03A1CE135568D436E0C65B1848E06ED2
-DEFINE_HIDDEN_STRING(String7, 0x03, ('0')('3')('A')('1')('C')('E')('1')('3')('5')('5')('6')('8')('D')('4')('3')('6')('E')('0')('C')('6')('5')('B')('1')('8')('4')('8')('E')('0')('6')('E')('D')('2'))
-//10026D66DBCFB84477FD7304BE3394AC
-DEFINE_HIDDEN_STRING(String8, 0x60, ('1')('0')('0')('2')('6')('D')('6')('6')('D')('B')('C')('F')('B')('8')('4')('4')('7')('7')('F')('D')('7')('3')('0')('4')('B')('E')('3')('3')('9')('4')('A')('C'))
-//9B16BDC036EC462D793B879F94A34A59
-DEFINE_HIDDEN_STRING(String9, 0x37, ('9')('B')('1')('6')('B')('D')('C')('0')('3')('6')('E')('C')('4')('6')('2')('D')('7')('9')('3')('B')('8')('7')('9')('F')('9')('4')('A')('3')('4')('A')('5')('9'))
-//CFB62F4C3FA7FFF8BF5265225E327282
-DEFINE_HIDDEN_STRING(String10, 0x11, ('C')('F')('B')('6')('2')('F')('4')('C')('3')('F')('A')('7')('F')('F')('F')('8')('B')('F')('5')('2')('6')('5')('2')('2')('5')('E')('3')('2')('7')('2')('8')('2'))
+//AB4A1923098239ED87D57DFE46AE3D368C47A40CE2DC2576D005C535E4AAED24
+DEFINE_HIDDEN_STRING(String1, 0x60, ('A')('B')('4')('A')('1')('9')('2')('3')('0')('9')('8')('2')('3')('9')('E')('D')('8')('7')('D')('5')('7')('D')('F')('E')('4')('6')('A')('E')('3')('D')('3')('6')('8')('C')('4')('7')('A')('4')('0')('C')('E')('2')('D')('C')('2')('5')('7')('6')('D')('0')('0')('5')('C')('5')('3')('5')('E')('4')('A')('A')('E')('D')('2')('4'))
+//80D9A946C7222E9D4BF58257B2B32B73ECC6F4FFAD57461EC45DAF9E8CE02A6C
+DEFINE_HIDDEN_STRING(String2, 0x53, ('8')('0')('D')('9')('A')('9')('4')('6')('C')('7')('2')('2')('2')('E')('9')('D')('4')('B')('F')('5')('8')('2')('5')('7')('B')('2')('B')('3')('2')('B')('7')('3')('E')('C')('C')('6')('F')('4')('F')('F')('A')('D')('5')('7')('4')('6')('1')('E')('C')('4')('5')('D')('A')('F')('9')('E')('8')('C')('E')('0')('2')('A')('6')('C'))
+//62A9BE37F5656C7E990417DF926F51C5399DED02C1ADF0E89D4BD49EBEBAC39E
+DEFINE_HIDDEN_STRING(String3, 0x6F, ('6')('2')('A')('9')('B')('E')('3')('7')('F')('5')('6')('5')('6')('C')('7')('E')('9')('9')('0')('4')('1')('7')('D')('F')('9')('2')('6')('F')('5')('1')('C')('5')('3')('9')('9')('D')('E')('D')('0')('2')('C')('1')('A')('D')('F')('0')('E')('8')('9')('D')('4')('B')('D')('4')('9')('E')('B')('E')('B')('A')('C')('3')('9')('E'))
+//5480DB6039F20E44E55C5DEDC95A1DBE
+DEFINE_HIDDEN_STRING(String4, 0x3E, ('5')('4')('8')('0')('D')('B')('6')('0')('3')('9')('F')('2')('0')('E')('4')('4')('E')('5')('5')('C')('5')('D')('E')('D')('C')('9')('5')('A')('1')('D')('B')('E'))
+//607BA0987673BFBA45C9F33466DE231D
+DEFINE_HIDDEN_STRING(String5, 0x1D, ('6')('0')('7')('B')('A')('0')('9')('8')('7')('6')('7')('3')('B')('F')('B')('A')('4')('5')('C')('9')('F')('3')('3')('4')('6')('6')('D')('E')('2')('3')('1')('D'))
+//ACEEBD8E60E307DB82FC2AA034C330D0
+DEFINE_HIDDEN_STRING(String6, 0x5F, ('A')('C')('E')('E')('B')('D')('8')('E')('6')('0')('E')('3')('0')('7')('D')('B')('8')('2')('F')('C')('2')('A')('A')('0')('3')('4')('C')('3')('3')('0')('D')('0'))
+//395578F9F3F7EF6DF7FA32FD6159476C
+DEFINE_HIDDEN_STRING(String7, 0x08, ('3')('9')('5')('5')('7')('8')('F')('9')('F')('3')('F')('7')('E')('F')('6')('D')('F')('7')('F')('A')('3')('2')('F')('D')('6')('1')('5')('9')('4')('7')('6')('C'))
+//D2B6C5FA0B25D47A38911F239C7789F1
+DEFINE_HIDDEN_STRING(String8, 0x1D, ('D')('2')('B')('6')('C')('5')('F')('A')('0')('B')('2')('5')('D')('4')('7')('A')('3')('8')('9')('1')('1')('F')('2')('3')('9')('C')('7')('7')('8')('9')('F')('1'))
+//9BA90112FEBF39FEA71751EE4EA30BAD
+DEFINE_HIDDEN_STRING(String9, 0x40, ('9')('B')('A')('9')('0')('1')('1')('2')('F')('E')('B')('F')('3')('9')('F')('E')('A')('7')('1')('7')('5')('1')('E')('E')('4')('E')('A')('3')('0')('B')('A')('D'))
+//7D593F0C3202EF7C4105FF66453A5D24
+DEFINE_HIDDEN_STRING(String10, 0x47, ('7')('D')('5')('9')('3')('F')('0')('C')('3')('2')('0')('2')('E')('F')('7')('C')('4')('1')('0')('5')('F')('F')('6')('6')('4')('5')('3')('A')('5')('D')('2')('4'))
 
 std::string KleverKeys::get(std::string id) {
 
-	if(id == "5A49325775CC4ABD8E224C449FCD78FAED91442CE0B8EE05E775DB453F076DAA") {
-		return GetString1();
-	} else if(id == "FDA7BA2702EA946AB1B259AB7FFEB3BD084A690EFE07FD8A28B06F393CDECDAF") {
-		return GetString2();
-	} else if(id == "3061AE7BC3993D5894CB328021E301D9A4728B8E6322923BA3F6629C2B811F64") {
-		return GetString3();
-	} else if(id == "60841541FD09A5FD779ACB7BE7D56D6D9CF3AFDA3A4683D4F0D0C9894C0095B2") {
-		return GetString4();
-	} else if(id == "A031B42090E381B2AF665A234C4DFC3FFFA8B9AC0CD3A9B70469E5DCA61D79A2") {
-		return GetString5();
-	} else if(id == "B4ECF325D5982D1C04B543A763C7DFB26615F44D7B5262B2490440FC45AFD29E") {
-		return GetString6();
-	} else if(id == "487844D7502D2937E6E7C1EC717BBE8E713DA84B0F907CE70A5131D4D2B4D13F") {
-		return GetString7();
-	} else if(id == "227500489192B139FF1BF62F6B61AA175C4A51769B43495B43A45DFA194A87A2") {
-		return GetString8();
-	} else if(id == "293C96ABF20B1ACE3AABF199163D910953A9C7372384B759F13081ECC6F900F1") {
-		return GetString9();
-	} else if(id == "D1707BEF5BA131F4262705F8823A8590359A573271F032632D34A6E082E88872") {
-		return GetString10();
-	}
+    std::string upperId = EasyEncrypt::Utils::toUpperCase(id);
+    std::string hashedId = EasyEncrypt::Utils::toUpperCase(EasyEncrypt::SHA::hash256((char*) upperId.c_str()));
 
 
-	//return new HexSecureRandom();
-	return "";
+    if(hashedId == "52E9C59E85355AF283260A1745EEB9F0845AE96B0E108A3C79447F681A03C6AE") {
+        return GetString1();
+    } else if(hashedId == "5931CCB671867C70EDC5FCF0BDEE646C4DBBCFCA066671BECFE47F6F25AD5264") {
+        return GetString2();
+    } else if(hashedId == "C9F64EC2819A3BB493F5D4F6AD83D8D731A7EF0953322651C7D995177DE967F4") {
+        return GetString3();
+    } else if(hashedId == "5E440864940C05086430C46186ADA26E132252C6C128975D60F5242F13C9345F") {
+        return GetString4();
+    } else if(hashedId == "B50361C41DDEA5A01C28A5CE4223456503ADD13FBBBC723113573FC3F8554368") {
+        return GetString5();
+    } else if(hashedId == "102992C9DFA3753111F5AAF2F10C7125A711126C9797F02F0C8810A72DFB8665") {
+        return GetString6();
+    } else if(hashedId == "899D069224E7306C779FB8BBD2B649FA39B2E6B0B59D6EEE9D97077C9F0B4EF2") {
+        return GetString7();
+    } else if(hashedId == "CB7EDB30AD816A71E74DDEFCA23BD3AAD96994676CE63D62E5397FA4E96144E4") {
+        return GetString8();
+    } else if(hashedId == "8DC1311B52FE1E44F819117F1EB9B9CBA5875194826518F30715B91976279126") {
+        return GetString9();
+    } else if(hashedId == "FA675E1C7C5922BE1D1162E470FE5D73A2EA69A7002F2ED1A996A511FB7B23CB") {
+        return GetString10();
+    }
+
+
+    //return a random SHA hash, disguised as a 32 bit hex key.
+    return EasyEncrypt::Utils::toUpperCase(EasyEncrypt::SHA::sha256((char*) std::to_string(EasyEncrypt::Utils::goodRandom(0, INT32_MAX, 0)).c_str()));
 
 
 }
