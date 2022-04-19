@@ -30,7 +30,7 @@ find_library(Boost boost
 
 #static library
 add_library(klever_keys HideString.h KleverKeys.h KleverKeys.cpp
-        easy_encrypt/EasyEncrypt.h easy_encrypt/EasyEncrypt.h
+        easy_encrypt/EasyEncrypt.cpp easy_encrypt/EasyEncrypt.h
         easy_encrypt/Base64.h)
 
 #shared library
