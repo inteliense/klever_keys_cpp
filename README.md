@@ -1,6 +1,4 @@
-# klever_keys_cpp (currently inop)
-
-- broke this when adding EasyEncrypt. Check back for fixed source.
+# klever_keys_cpp
 
 The purpose for this library is to have secure system keys and initialization vectors for various encryption methods (ex: AES).
 
