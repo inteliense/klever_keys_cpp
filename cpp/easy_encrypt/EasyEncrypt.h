@@ -14,44 +14,105 @@ class EasyEncrypt {
 
 public:
 
-    class AES {
-    public:
-        static std::string cbc256(char* data, ssize_t data_len, char* key, char* iv, bool encrypt);
-        static std::string ecb256(char* data, ssize_t data_len, char* key, bool encrypt);
-        static std::string cbc128(char* data, ssize_t data_len, char* key, char* iv, bool encrypt);
-        static std::string ecb128(char* data, ssize_t data_len, char* key, bool encrypt);
+    enum encode_t {
+        BASE64,
+        HEX,
     };
+
+    class AES {
+
+    public:
+
+        static char* cbc256(char* data, char* key, char* iv, bool encrypt, int* len);
+        static char* ecb256(char* data, char* key, bool encrypt, int* len);
+        static char* cbc128(char* data, char* key, char* iv, bool encrypt, int* len);
+        static char* ecb128(char* data, char* key, bool encrypt, int* len);
+
+        class Hex {
+        public:
+            static std::string cbc256(char* data, std::string hex_key, std::string hex_iv, bool encrypt);
+            static std::string ecb256(char* data, std::string hex_key, bool encrypt);
+            static std::string cbc128(char* data, std::string hex_key, std::string hex_iv, bool encrypt);
+            static std::string ecb128(char* data, std::string hex_key, bool encrypt);
+        };
+
+        class Base64 {
+        public:
+            static std::string cbc256(char* data, std::string hex_key, std::string hex_iv, bool encrypt);
+            static std::string ecb256(char* data, std::string hex_key, bool encrypt);
+            static std::string cbc128(char* data, std::string hex_key, std::string hex_iv, bool encrypt);
+            static std::string ecb128(char* data, std::string hex_key, bool encrypt);
+        };
+
+    };
+
     class SHA {
     public:
-        static std::string hmac512(char *data, ssize_t data_len, char* key, ssize_t key_len);
-        static std::string hmac256(char *data, ssize_t data_len, char* key, ssize_t key_len);
-        static std::string hash512(char* data, ssize_t data_len);
-        static std::string hash256(char* data, ssize_t data_len);
+        static char* hmac512(char *data, char* key);
+        static char* hmac256(char *data, char* key);
+        static char* hash512(char* data);
+        static char* hash256(char* data);
+
+        class Hex {
+        public:
+            static std::string hmac512(char *data, char* key);
+            static std::string hmac256(char *data, char* key);
+            static std::string hash512(char* data);
+            static std::string hash256(char* data);
+        };
+
+        class Base64 {
+        public:
+            static std::string hmac512(char *data, char* key);
+            static std::string hmac256(char *data, char* key);
+            static std::string hash512(char* data);
+            static std::string hash256(char* data);
+        };
+
     };
     class MD5 {
     public:
-        static std::string get(char* data);
+        static char* get(char* data);
+
+        class Hex {
+        public:
+            static std::string get(char* data);
+        };
+
+        class Base64 {
+        public:
+            static std::string get(char* data);
+        };
+
+    };
+    class Random {
+    public:
+
+        static int getGoodInt(int start, int end, int seed);
+
+        static std::string secureEncoded(EasyEncrypt::encode_t encoding, size_t size);
+        static std::string goodEncoded(EasyEncrypt::encode_t, size_t size);
+
+        static char* secureRandom(size_t count);
+        static char* goodRandom(size_t count);
+
     };
     class Utils {
     public:
 
-        static void fromHex(const char *source, ssize_t size, char** destination);
-        static void fromBase64(const char *source, ssize_t size, char* destination);
+        static char* fromHex(const char *source);
+        static char* fromBase64(const char *source);
 
-        static std::vector<unsigned char> base64ToVector(const char* source);
-        static std::vector<unsigned char> hexToVector(const char* source, ssize_t size);
-        static std::vector<unsigned char> toVector(char* source, size_t size);
+        //passing NULL to size attempts to calculate size with strlen
+        static std::vector<char> toVector(char* source, size_t size);
+        static std::vector<char> base64ToVector(const char* source);
+        static std::vector<unsigned char> hexToVector(const char* source, size_t size);
 
-        static void secureRandom(unsigned char* dest, ssize_t count);
-        static int goodRandom(int start, int end, int seed);
-
-        static std::string toHex(unsigned char* source, ssize_t size);
-        static std::string toBase64(unsigned char* source, ssize_t size);
+        static std::string toHex(char* source, size_t size);
+        static std::string toBase64(char* source, size_t size);
         static std::string base64ToHex(const char* input);
         static std::string hexToBase64(const char* input);
 
-        static std::vector<std::string> explode(const std::string& str, const char& c);
-        static int strToInt(std::string val);
         static std::string toUpperCase(std::string input);
         static std::string toLowerCase(std::string input);
 
