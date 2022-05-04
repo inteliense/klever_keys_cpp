@@ -472,8 +472,8 @@ std::string cbc256Encoded(char* data_in, char* key_in, char* iv_in, bool encrypt
 
     if(encrypt) {
         str = (encoding == EasyEncrypt::BASE64) ?
-                EasyEncrypt::Utils::toBase64(res, *data_len)
-                : EasyEncrypt::Utils::toHex(res, *data_len);
+              EasyEncrypt::Utils::toBase64(res, *data_len)
+                                                : EasyEncrypt::Utils::toHex(res, *data_len);
     } else {
         str = (const char*) res;
     }
@@ -937,7 +937,7 @@ std::string EasyEncrypt::Utils::base64ToHex(const char *input) {
     return toHex(
             EasyEncrypt::Utils::base64ToVector(input).data(),
             EasyEncrypt::Utils::base64ToVector(input).size()
-            );
+    );
 
 }
 
